@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle do LED</title>
+    <link id="theme-link" rel="stylesheet" href="light.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Controle do LED</h1>
+
+    <img
+            src="https://thumbs.dreamstime.com/b/red-led-diode-light-emitting-bright-colored-leds-237591435.jpg"
+            alt="LED Vermelho"
+            class="led-image"
+    >
+
+    <form action="/led/ligar" method="get">
+        <button type="submit">Ligar LED</button>
+    </form>
+
+    <form action="/led/desligar" method="get">
+        <button type="submit">Desligar LED</button>
+    </form>
+
+    <button class="theme-toggle" onclick="toggleTheme()">Alternar Tema</button>
+</div>
+
+<script>
+    function toggleTheme() {
+        const themeLink = document.getElementById('theme-link');
+        const currentTheme = themeLink.getAttribute('href');
+        const newTheme = currentTheme === 'light.css' ? 'dark.css' : 'light.css';
+        themeLink.setAttribute('href', newTheme);
+    }
+</script>
+
+</body>
+</html>
