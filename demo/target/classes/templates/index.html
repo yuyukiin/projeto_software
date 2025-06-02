@@ -4,7 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Controle do LED</title>
-    <link id="theme-link" rel="stylesheet" href="light.css">
+
+    <style>
+        /* Estilo Tema Claro */
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            text-align: center;
+            max-width: 400px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .led-image {
+            width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        form {
+            margin: 10px 0;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .theme-toggle {
+            background-color: #6c757d;
+        }
+
+        .theme-toggle:hover {
+            background-color: #495057;
+        }
+    </style>
 </head>
 <body>
 
@@ -12,9 +73,9 @@
     <h1>Controle do LED</h1>
 
     <img
-            src="https://thumbs.dreamstime.com/b/red-led-diode-light-emitting-bright-colored-leds-237591435.jpg"
-            alt="LED Vermelho"
-            class="led-image"
+        src="https://thumbs.dreamstime.com/b/red-led-diode-light-emitting-bright-colored-leds-237591435.jpg"
+        alt="LED Vermelho"
+        class="led-image"
     >
 
     <form action="/led/ligar" method="get">
@@ -24,18 +85,7 @@
     <form action="/led/desligar" method="get">
         <button type="submit">Desligar LED</button>
     </form>
-
-    <button class="theme-toggle" onclick="toggleTheme()">Alternar Tema</button>
 </div>
-
-<script>
-    function toggleTheme() {
-        const themeLink = document.getElementById('theme-link');
-        const currentTheme = themeLink.getAttribute('href');
-        const newTheme = currentTheme === 'light.css' ? 'dark.css' : 'light.css';
-        themeLink.setAttribute('href', newTheme);
-    }
-</script>
 
 </body>
 </html>
